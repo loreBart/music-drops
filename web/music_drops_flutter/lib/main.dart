@@ -72,21 +72,20 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.orange,
           fontFamily: 'Roboto'
         ),
-        home: CircleWaveProgress(32) 
+        home: App() 
       )
     );
   }
 }
 
 class HomePage extends StatelessWidget {
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {  
     return Text('Logged In');
   }
 
 }
-
-
 
 class App extends StatelessWidget {
   @override
@@ -95,8 +94,11 @@ class App extends StatelessWidget {
     return StreamBuilder<String>(
       stream: auth.onAuthChanged,
       builder: (context, AsyncSnapshot<String> snapshot) {
+        print('App::build snapshot connection state ${snapshot.connectionState}');
         if (snapshot.connectionState == ConnectionState.active) {
+          print('App::build snapshot active');
           final bool logged = snapshot.hasData;
+          print('App::build snapshot logged -> $logged');
           return logged ? HomePage() : LoginWidget();
         }
       }

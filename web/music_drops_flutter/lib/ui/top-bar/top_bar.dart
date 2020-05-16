@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:music_drops_flutter/ui/responsive_stateless_widget.dart';
+import 'package:music_drops_flutter/model/auth/auth.dart';
+import 'package:music_drops_flutter/ui/widgets/auth_provider_widget.dart';
 
-class TopBarWidget extends ResponsiveStatelessWidget {
+class TopBarWidget extends StatelessWidget {
 
   @protected
-  @protected
-  Widget buildResponsiveWidget(BuildContext context, MediaQueryData mediaQueryData) {
+  Widget build(BuildContext context) {
+    Auth auth = AuthProviderWidget.of(context).auth;
     return AppBar(
       title: const Text('Music Drops'),
       actions: <Widget>[
@@ -13,14 +14,8 @@ class TopBarWidget extends ResponsiveStatelessWidget {
         IconButton(
           icon: Icon(Icons.account_circle),
           onPressed: () {
-                print('account clicked!');
-          },
-        ),
-            // action button
-        IconButton(
-          icon: Icon(Icons.music_note),
-          onPressed: () {
-            print('music note clicked!');
+            print('account clicked!');
+            auth.logout();    
           },
         ),
       ],
