@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.8">
+      <module name="MusicDrops.app" target="11" />
+      <module name="MusicDrops.backend" target="11" />
+      <module name="MusicDrops.buildSrc" target="11" />
+      <module name="MusicDrops.desktop" target="11" />
+      <module name="MusicDrops.desktop.commonMain" target="11" />
+      <module name="MusicDrops.desktop.commonTest" target="11" />
+      <module name="MusicDrops.desktop.jvmMain" target="11" />
+      <module name="MusicDrops.desktop.jvmTest" target="11" />
+      <module name="MusicDrops.model.commonMain" target="11" />
+      <module name="MusicDrops.model.commonTest" target="11" />
+      <module name="MusicDrops.model.desktopMain" target="11" />
+      <module name="MusicDrops.model.desktopTest" target="11" />
+      <module name="MusicDrops.ui.commonMain" target="11" />
+      <module name="MusicDrops.ui.commonTest" target="11" />
+      <module name="MusicDrops.ui.desktopMain" target="11" />
+      <module name="MusicDrops.ui.desktopTest" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
