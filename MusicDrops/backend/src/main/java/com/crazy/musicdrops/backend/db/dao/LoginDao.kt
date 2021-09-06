@@ -14,7 +14,7 @@ class LoginDao : ILoginDao {
         newSuspendedTransaction {
             var uu: User? = null
             try {
-                uu = UserTable.select { UserTable.user eq u.user }.single().toUser()
+                uu = UserTable.select { UserTable.user eq u.email }.single().toUser()
             } catch (e: Exception) {
             }
             Log.debug("insertUser $u RET -> $uu")
@@ -22,7 +22,7 @@ class LoginDao : ILoginDao {
                 Log.debug("insertUser NULL user")
                 try {
                     UserTable.insert {
-                        it[user] = u.user
+                        it[user] = u.email
                         it[password] = u.password
                     } get UserTable.id
                     Result.Ok()
@@ -38,7 +38,7 @@ class LoginDao : ILoginDao {
     override suspend fun login(u: User): Result = newSuspendedTransaction {
         Log.debug("login select with user $u")
         try {
-            val user = UserTable.select { UserTable.user eq u.user }.single().toUser()
+            val user = UserTable.select { UserTable.user eq u.email }.single().toUser()
             Log.debug("login user $u")
             if (user.password == u.password) {
                 Result.Ok()

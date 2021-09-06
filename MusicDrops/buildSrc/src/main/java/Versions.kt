@@ -28,4 +28,7 @@ object Versions {
     const val okhttp = "5.0.0-alpha.2"
     const val retrofit = "2.9.0"
     const val glide = "4.12.0"
+    // hilt
+    const val hilt = "2.38.1"
+
 }

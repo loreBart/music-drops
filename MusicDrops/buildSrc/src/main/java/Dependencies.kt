@@ -18,6 +18,8 @@ object Libs {
 
     const val kotlinSerialization = "org.jetbrains.kotlin:kotlin-serialization:${Versions.kotlin}"
 
+    const val androidHiltGradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
+
     const val ktLint = "com.pinterest:ktlint:${Versions.ktLint}"
 
     const val robolectric = "org.robolectric:robolectric:${Versions.robolectric}"
@@ -136,6 +138,7 @@ object Libs {
     }
 
     object Hilt {
-
+        const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+        const val kaptHilt = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
     }
 }

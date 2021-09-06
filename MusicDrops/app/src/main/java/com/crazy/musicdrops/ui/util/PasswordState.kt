@@ -1,35 +1,45 @@
 package com.crazy.musicdrops.ui.util
 
 
-class PasswordState :
-    TextFieldState(validator = ::isPasswordValid, errorFor = ::passwordValidationError)
+class PasswordState(
+    private val invalidPassword: String = "",
+    private val invalidEmptyPassword: String = "") :
+    TextFieldState() {
 
-class ConfirmPasswordState(private val passwordState: PasswordState) : TextFieldState() {
+    override val validator: (String) -> Boolean = { password ->
+        password.length > 3
+    }
+
+    override val errorFor: (String) -> String = { password ->
+        if (password.isNullOrEmpty()) {
+            invalidEmptyPassword
+        } else {
+            invalidPassword
+        }
+
+    }
+
+}
+
+class ConfirmPasswordState(
+    private val passwordState: PasswordState,
+    private val passwordConfirmationError: String = ""
+) : TextFieldState() {
+
     override val isValid
         get() = passwordAndConfirmationValid(passwordState.text, text)
 
     override fun getError(): String? {
         return if (showErrors()) {
-            passwordConfirmationError()
+            passwordConfirmationError
         } else {
             null
         }
     }
-}
 
-private fun passwordAndConfirmationValid(password: String, confirmedPassword: String): Boolean {
-    return isPasswordValid(password) && password == confirmedPassword
-}
 
-private fun isPasswordValid(password: String): Boolean {
-    return password.length > 3
-}
+    private fun passwordAndConfirmationValid(password: String, confirmedPassword: String): Boolean {
+        return passwordState.validator(password) && password == confirmedPassword
+    }
 
-@Suppress("UNUSED_PARAMETER")
-private fun passwordValidationError(password: String): String {
-    return "Invalid password"
-}
-
-private fun passwordConfirmationError(): String {
-    return "Passwords don't match"
 }

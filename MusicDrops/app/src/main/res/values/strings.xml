@@ -4,16 +4,24 @@
     <string name="title_music_drops">MusicDrops</string>
 
     <string name="message_create_account">Create Account</string>
+    <string name="message_invalid_email">Invalid email:</string>
+    <string name="message_invalid_empty_email">Invalid empty email</string>
 
+    <string name="message_invalid_empty_password">Invalid empty password</string>
+    <string name="message_invalid_password">Invalid password</string>
+
+    <string name="message_invalid_password_repeat">Password does not match</string>
+
+    <string name="label_or">Or</string>
     <string name="label_sign_in">SignIn</string>
+    <string name="label_register">Register</string>
     <string name="label_email">Email</string>
     <string name="label_back">Back</string>
     <string name="label_password">Password</string>
+    <string name="label_repeat_password">Repeat Password</string>
     <string name="label_password_show">Show password</string>
     <string name="label_password_hide">Hide password</string>
 
-    <string name="label_register">Register</string>
-    <string name="label_or">Or</string>
     <string name="label_music">Music</string>
     <string name="label_drops">Drops</string>
 

@@ -43,7 +43,7 @@ fun Application.login(service: ILoginService) {
                     val token = JWT.create()
                         .withAudience(audience)
                         .withIssuer(issuer)
-                        .withClaim("user", user.user)
+                        .withClaim("user", user.email)
                         .withExpiresAt(Date(System.currentTimeMillis() + 60000))
                         .sign(Algorithm.RSA256(publicKey as java.security.interfaces.RSAPublicKey, privateKey as java.security.interfaces.RSAPrivateKey))
                     call.respond(hashMapOf("token" to token))

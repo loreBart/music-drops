@@ -3,6 +3,7 @@ package com.crazy.musicdrops.ui.screen.landing
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -41,7 +42,8 @@ fun LandingScreen(
             ) {
                 Button(
                     modifier = Modifier.fillMaxWidth(),
-                    onClick = onLoginClicked
+                    onClick = onLoginClicked,
+                    shape = RoundedCornerShape(50)
                 ) {
                     Text(
                         text = stringResource(R.string.label_sign_in)
@@ -65,7 +67,8 @@ fun LandingScreen(
                 OutlinedButton(
                     onClick = onRegisterClicked,
                     modifier = Modifier
-                        .fillMaxWidth()
+                        .fillMaxWidth(),
+                    shape = RoundedCornerShape(50)
                 ) {
                     Text(
                         text = stringResource(R.string.label_register)

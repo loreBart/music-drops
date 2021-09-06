@@ -5,16 +5,21 @@ import java.util.regex.Pattern
 // Consider an email valid if there's some text before and after a "@"
 private const val EMAIL_VALIDATION_REGEX = "^(.+)@(.+)\$"
 
-class EmailState :
-    TextFieldState(validator = ::isEmailValid, errorFor = ::emailValidationError)
+class EmailState(private val invalidMessage: String = "",
+                 private val invalidEmptyMessage: String = "") :
+    TextFieldState()
+{
 
-/**
- * Returns an error to be displayed or null if no error was found
- */
-private fun emailValidationError(email: String): String {
-    return "Invalid email: $email"
-}
+    override val validator: (String) -> Boolean = { email ->
+        Pattern.matches(EMAIL_VALIDATION_REGEX, email)
+    }
 
-private fun isEmailValid(email: String): Boolean {
-    return Pattern.matches(EMAIL_VALIDATION_REGEX, email)
+    override val errorFor: (String) -> String = { email ->
+        if (email.isNullOrEmpty()) {
+            invalidEmptyMessage
+        } else {
+            "$invalidMessage $email"
+        }
+    }
+
 }

@@ -8,8 +8,8 @@ import java.util.*
 data class User(
     @Serializable(with = UUIDSerializer::class)
     val id: UUID? = null,
-    val user: String,
+    val email: String,
     val password: String
 ) {
-    override fun toString(): String = "($id) $user password: $password"
+    override fun toString(): String = "($id) $email password: $password"
 }

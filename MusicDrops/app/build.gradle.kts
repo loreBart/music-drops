@@ -1,6 +1,7 @@
 plugins {
     id("org.jetbrains.compose") version Versions.composeDesktop
     id("com.android.application")
+    id("dagger.hilt.android.plugin")
     kotlin("android")
     kotlin("kapt")
 }
@@ -11,6 +12,37 @@ version = "1.0"
 repositories {
     google()
 }
+
+android {
+
+    compileSdk = Android.compileSdk
+
+    defaultConfig {
+        applicationId = "com.crazy.musicdrops"
+        minSdk = Android.minSdk
+        targetSdk = Android.targetSdk
+        versionCode = 1
+        versionName = "1.0"
+        buildConfigField("String", "BASE_URL", "\"http://localhost:8080\"")
+    }
+
+    buildTypes {
+        getByName("release") {
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+
+}
+
 
 dependencies {
 
@@ -35,7 +67,6 @@ dependencies {
     implementation(Libs.Koin.core)
 
     // okhttp/retrofit/glide
-
     implementation(Libs.OkHttp.okhttp)
     implementation(Libs.OkHttp.okhttpLogging)
     implementation(Libs.OkHttp.okhttpUrlConnection)
@@ -43,31 +74,12 @@ dependencies {
     implementation(Libs.Retrofit.retrofitGson)
     implementation(Libs.Glide.glide)
     implementation(Libs.Glide.glideOkHttp)
-
+    // hilt
+    implementation(Libs.Hilt.hilt)
+    kapt(Libs.Hilt.kaptHilt)
 }
 
-android {
-    compileSdk = Android.compileSdk
-    defaultConfig {
-        applicationId = "com.crazy.musicdrops"
-        minSdk = Android.minSdk
-        targetSdk = Android.targetSdk
-        versionCode = 1
-        versionName = "1.0"
-    }
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "11"
-    }
-
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }
