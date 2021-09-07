@@ -56,8 +56,8 @@ object Libs {
         }
 
         object DataStore {
-            const val preferences =
-                "androidx.datastore:datastore-preferences:${Versions.dataStorePreferences}"
+            const val datastore =
+                "androidx.datastore:datastore-preferences:${Versions.datastore}"
         }
 
         object Lifecycle {
@@ -120,6 +120,8 @@ object Libs {
         const val serialization = "io.ktor:ktor-serialization:${Versions.ktor}"
         const val serverCore = "io.ktor:ktor-server-core:${Versions.ktor}"
         const val serverNetty = "io.ktor:ktor-server-netty:${Versions.ktor}"
+
+        const val session = "io.ktor:ktor-server-sessions:${Versions.ktor}"
 
         const val serverTests = "io.ktor:ktor-server-tests:${Versions.ktor}"
     }

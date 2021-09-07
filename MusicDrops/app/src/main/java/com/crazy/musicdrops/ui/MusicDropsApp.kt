@@ -8,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
+import com.crazy.musicdrops.model.datastore.DataStore
 import com.crazy.musicdrops.ui.screen.Routing
 import com.crazy.musicdrops.ui.screen.Screen
 import com.crazy.musicdrops.ui.screen.home.HomeScreen
@@ -19,7 +20,6 @@ import com.crazy.musicdrops.ui.screen.register.RegisterScreen
 @Composable
 fun MusicDropsApp(
     loginViewModel: LoginViewModel
-
 ) {
     val navHostController = rememberNavController()
     val navigation = remember(navHostController) {

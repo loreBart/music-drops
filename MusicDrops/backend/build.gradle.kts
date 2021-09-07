@@ -22,6 +22,8 @@ dependencies {
     implementation(Libs.Ktor.serverNetty)
     testImplementation(Libs.Ktor.serverTests)
 
+    implementation(Libs.Ktor.session)
+
     implementation(Libs.Exposed.core)
     implementation(Libs.Exposed.jdbc)
 

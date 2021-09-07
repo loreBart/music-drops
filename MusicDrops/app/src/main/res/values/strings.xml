@@ -12,6 +12,8 @@
 
     <string name="message_invalid_password_repeat">Password does not match</string>
 
+    <string name="message_auto_login">Auto Login</string>
+
     <string name="label_or">Or</string>
     <string name="label_sign_in">SignIn</string>
     <string name="label_register">Register</string>

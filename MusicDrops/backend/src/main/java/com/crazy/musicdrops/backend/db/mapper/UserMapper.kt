@@ -8,7 +8,7 @@ import org.jetbrains.exposed.sql.ResultRow
 fun ResultRow.toUser() =
     User(
         id = this[UserTable.id],
-        email = this[UserTable.user],
+        email = this[UserTable.email],
         password = this[UserTable.password]
     )
 

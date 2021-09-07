@@ -7,7 +7,7 @@ object Versions {
     const val composeActivity = "1.3.0-rc01"
 
     const val composeDesktop = "0.4.0"
-    const val dataStorePreferences = "1.0.0-rc02"
+    const val datastore = "1.0.0"
     const val espressoCore = "3.3.0"
     const val exposedSql = "0.32.1"
     const val junit = "4.12"

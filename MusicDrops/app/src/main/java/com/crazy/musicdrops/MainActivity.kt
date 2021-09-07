@@ -9,10 +9,12 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.crazy.musicdrops.model.datastore.DataStore
 import com.crazy.musicdrops.ui.MusicDropsApp
 import com.crazy.musicdrops.ui.screen.login.LoginViewModel
 import com.crazy.musicdrops.ui.theme.MusicDropsTheme
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

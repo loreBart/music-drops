@@ -45,6 +45,7 @@ android {
 
 
 dependencies {
+    implementation(project(":model"))
 
     implementation(Libs.AndroidX.Compose.activity)
     implementation(Libs.AndroidX.Compose.ui)
@@ -77,6 +78,10 @@ dependencies {
     // hilt
     implementation(Libs.Hilt.hilt)
     kapt(Libs.Hilt.kaptHilt)
+
+    // datastore
+    implementation(Libs.AndroidX.DataStore.datastore)
+
 }
 
 // Allow references to generated code
