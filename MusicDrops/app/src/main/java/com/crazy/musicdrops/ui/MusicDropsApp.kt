@@ -18,9 +18,7 @@ import com.crazy.musicdrops.ui.screen.login.LoginViewModel
 import com.crazy.musicdrops.ui.screen.register.RegisterScreen
 
 @Composable
-fun MusicDropsApp(
-    loginViewModel: LoginViewModel
-) {
+fun MusicDropsApp() {
     val navHostController = rememberNavController()
     val navigation = remember(navHostController) {
         Routing(navHostController)
@@ -35,8 +33,7 @@ fun MusicDropsApp(
         composable(Screen.Login) {
             LoginScreen(
                 navigation.goToHome,
-                navigation.goBack,
-                loginViewModel
+                navigation.goBack
             )
         }
 

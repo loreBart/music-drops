@@ -2,7 +2,7 @@
 object Versions {
     const val activityKtx = "1.3.0-rc02"
     const val appCompat = "1.3.1"
-    const val androidGradlePlugin = "7.1.0-alpha10"
+    const val androidGradlePlugin = "7.1.0-alpha11"
     const val compose = "1.0.0"
     const val composeActivity = "1.3.0-rc01"
 
@@ -20,6 +20,7 @@ object Versions {
     const val lifecycle = "2.3.1"
     const val materialComponents = "1.4.0"
     const val navigationCompose = "2.4.0-alpha05"
+    const val navigationComposeHilt = "1.0.0-alpha02"
     const val robolectric = "4.3.1"
     const val sqlDelight = "1.5.1"
     const val testCoreKtx = "1.3.0"

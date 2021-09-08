@@ -19,14 +19,12 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    private val loginViewModel by viewModels<LoginViewModel>()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MusicDropsTheme {
                 // A surface container using the 'background' color from the theme
-                MusicDropsApp(loginViewModel)
+                MusicDropsApp()
             }
         }
     }

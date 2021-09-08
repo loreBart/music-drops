@@ -77,6 +77,8 @@ dependencies {
     implementation(Libs.Glide.glideOkHttp)
     // hilt
     implementation(Libs.Hilt.hilt)
+    implementation(Libs.Hilt.hiltNavigation)
+    kapt(Libs.Hilt.kaptDaggerHilt)
     kapt(Libs.Hilt.kaptHilt)
 
     // datastore

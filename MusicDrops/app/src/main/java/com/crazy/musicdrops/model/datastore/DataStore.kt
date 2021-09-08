@@ -11,11 +11,13 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
+import javax.inject.Singleton
 
 const val DATA_STORE_NAME = "datastore"
 
+@Singleton
 class DataStore @Inject constructor(@ApplicationContext private val context: Context) {
-    val Context.dataStore: DataStore<Preferences> by preferencesDataStore(DATA_STORE_NAME)
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(DATA_STORE_NAME)
 
     suspend fun set(key: String, value: String) {
         val stringKey = stringPreferencesKey(key)

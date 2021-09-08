@@ -18,7 +18,7 @@ import javax.inject.Inject
 @HiltViewModel
 class LoginViewModel @Inject constructor(
     private val loginRepository: ILoginRepository,
-    var dataStore: DataStore
+    private var dataStore: DataStore
 ) : ViewModel() {
 
     var autoLogin: StateFlow<Boolean> = dataStore.getBoolean("auto_login", false).stateIn(

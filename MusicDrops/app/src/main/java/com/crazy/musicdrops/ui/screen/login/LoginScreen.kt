@@ -18,6 +18,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.crazy.musicdrops.R
 import com.crazy.musicdrops.ui.screen.component.Branding
 import com.crazy.musicdrops.ui.util.*
@@ -28,7 +30,7 @@ import kotlinx.coroutines.launch
 fun LoginScreen(
     goToHome: (String) -> Unit = {},
     goBack: () -> Unit = {},
-    loginViewModel: LoginViewModel
+    loginViewModel: LoginViewModel = hiltViewModel()
 ) {
     Scaffold(
         topBar = {
